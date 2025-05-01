@@ -1,116 +1,94 @@
-# University Landing Page Frontend
+# University Landing Page
 
-This is the frontend for the University Landing Page project. It's built with HTML, CSS, and vanilla JavaScript to create a responsive and interactive user interface for a university website.
+This is a University landing page with a simple Node.js backend.
 
 ## Features
 
-- Responsive design that works on desktop, tablet, and mobile devices
-- Interactive navigation menu
-- Course catalog with detailed information
-- Admissions application form
-- Contact form for inquiries
-- User authentication (login/registration)
-- Student dashboard
-
-## Pages
-
-1. **Home Page (index.html)**
-   - University overview
-   - Featured courses
-   - Testimonials
-   - News and events
-
-2. **About Page (about.html)**
-   - University history
-   - Mission and vision
-   - Faculty information
-   - Campus facilities
-
-3. **Courses Page (courses.html)**
-   - Complete list of available courses
-   - Course details including duration, fees, and requirements
-   - Course filtering and search
-
-4. **Admissions Page (admissions.html)**
-   - Admission requirements
-   - Application process
-   - Scholarship information
-   - Application form
-
-5. **Contact Page (contact.html)**
-   - Contact form
-   - University location map
-   - Contact information
-
-6. **Login Page (login.html)**
-   - User authentication
-   - Registration for new students
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- CSS Grid and Flexbox for layouts
-- Responsive design principles
-- Form validation
-
-## File Structure
-
-```
-universitylandingpage/
-├── index.html              # Home page
-├── about.html              # About page
-├── courses.html            # Courses page
-├── admissions.html         # Admissions page
-├── contact.html            # Contact page
-├── login.html              # Login page
-├── styles.css              # Main stylesheet
-├── script.js               # Main JavaScript file
-└── images/                 # Image directory
-```
+- Responsive university website with multiple pages (Home, About, Courses, Admissions, Contact, Login)
+- Simple backend built with Express.js
+- API endpoints for courses and contact form submissions
+- No database required - all data is stored in memory
 
 ## Getting Started
 
 ### Prerequisites
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-### Local Development
+### Installation
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/universitylandingpage.git
-   ```
+```bash
+git clone <repository-url>
+cd universitylandingpage
+```
 
-2. Open any of the HTML files in your web browser to view the pages.
+2. Install dependencies:
+```bash
+npm install
+```
 
-3. To make changes:
-   - Edit the HTML files for content changes
-   - Modify `styles.css` for styling updates
-   - Update `script.js` for JavaScript functionality
+### Running the Server
 
-## Integration with Backend
+There are two ways to run the server:
 
-This frontend is designed to work with a Node.js backend API. The following features require the backend:
+#### Using npm directly
 
-- User authentication (login/registration)
-- Course data retrieval
-- Application form submission
-- Contact form submission
+Start the development server:
+```bash
+npm run dev
+```
 
-When running with the backend:
-1. Make sure the backend server is running
-2. The frontend will make API calls to retrieve and submit data
+For production:
+```bash
+npm start
+```
 
-## Browser Compatibility
+#### Using helper scripts
 
-The website is compatible with:
-- Chrome 60+
-- Firefox 60+
-- Safari 12+
-- Edge 16+
+For easier setup and running, you can use the included helper scripts:
+
+```bash
+# Install dependencies and set up the project
+node install.js
+
+# Start the development server
+node run.js
+```
+
+Once the server is running, access the website at:
+```
+http://localhost:3000
+```
+
+## API Endpoints
+
+The backend provides the following API endpoints:
+
+- `GET /api/courses` - Returns a list of available courses
+- `POST /api/contact` - Accepts contact form submissions
+
+### Testing the API
+
+You can test the API endpoints using the included test script:
+
+```bash
+# Make sure the server is running first
+node test-api.js
+```
+
+This will test both API endpoints and show the results in the console.
+
+## Project Structure
+
+- `server.js` - Main entry point for the Express server
+- `index.html`, `about.html`, etc. - Static HTML pages
+- `styles.css` - Main CSS stylesheet
+- `script.js` - Main JavaScript for the website
+- `contact.js`, `courses.js` - JavaScript modules for specific functionality
+- `images/` - Directory containing website images
 
 ## License
 
-Feel free to use this template for your university or educational institution website. 
+This project is open source and available under the [MIT License](LICENSE). 
