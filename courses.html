@@ -13,14 +13,21 @@
       /* Additional styles specific to courses page */
       .courses-hero {
         height: 50vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("images/courses-hero.jpg") no-repeat center center/cover;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         color: white;
         padding-top: 70px;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)
+          ),
+          url(/images/image.png);
+      }
+      .hero-content {
+        max-width: 800px;
+        padding: 150px 20px 20px 20px;
       }
 
       .filter-controls {
@@ -341,10 +348,13 @@
             Undergraduate
           </button>
           <button class="filter-btn" data-filter="graduate">Graduate</button>
-          <button class="filter-btn" data-filter="online">Online</button>
-          <button class="filter-btn" data-filter="certificate">
-            Certificates
+          <button class="filter-btn" data-filter="engineering">
+            Engineering
           </button>
+          <button class="filter-btn" data-filter="computer">
+            Computer Science
+          </button>
+          <button class="filter-btn" data-filter="business">Business</button>
         </div>
       </div>
     </section>
@@ -443,7 +453,7 @@
         <div class="course graduate active">
           <div class="course-detail">
             <div class="course-image">
-              <img src="images/grad1.jpg" alt="MBA" />
+              <img src="images/program3.jpg" alt="MBA" />
             </div>
             <div class="course-info">
               <h3>Master of Business Administration (MBA)</h3>
@@ -484,14 +494,59 @@
           </div>
         </div>
 
-        <!-- Computer Science - Graduate -->
-        <div class="course graduate active">
+        <!-- Bachelor of Computer Applications (BCA) -->
+        <div class="course undergraduate computer active">
           <div class="course-detail">
             <div class="course-image">
-              <img src="images/grad2.jpg" alt="MS Computer Science" />
+              <img src="images/program4.jpg" alt="BCA Program" />
             </div>
             <div class="course-info">
-              <h3>Master of Science in Computer Science</h3>
+              <h3>Bachelor of Computer Applications (BCA)</h3>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Undergraduate</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-clock"></i>
+                  <span>3 Years</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>On Campus</span>
+                </div>
+              </div>
+              <p>
+                The BCA program provides a strong foundation in computer
+                applications, programming, and software development. Students
+                learn various programming languages including Java, Python, and
+                C++, along with web technologies, database management, and
+                software engineering.
+              </p>
+              <p>
+                Career opportunities include software developer, web developer,
+                database administrator, system analyst, and IT support
+                specialist. The program prepares students for further studies in
+                MCA and other advanced computing degrees.
+              </p>
+              <div class="course-action">
+                <a href="admissions.html#application" class="cta-button"
+                  >Apply Now</a
+                >
+                <a href="#" class="outline-btn">Download Brochure</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master of Computer Applications (MCA) -->
+        <div class="course graduate computer active">
+          <div class="course-detail">
+            <div class="course-image">
+              <img src="images/program4.jpg" alt="MCA Program" />
+            </div>
+            <div class="course-info">
+              <h3>Master of Computer Applications (MCA)</h3>
               <div class="course-meta">
                 <div class="meta-item">
                   <i class="fas fa-graduation-cap"></i>
@@ -507,16 +562,17 @@
                 </div>
               </div>
               <p>
-                The MS in Computer Science program delves deeper into advanced
-                computing concepts, including artificial intelligence, machine
-                learning, data science, and high-performance computing. Students
-                engage in cutting-edge research and develop specialized
-                technical expertise.
+                The MCA program offers advanced education in computer
+                applications with a focus on software development, system
+                architecture, and advanced programming concepts. Students
+                develop expertise in algorithm design, full-stack development,
+                cloud computing, and enterprise solutions.
               </p>
               <p>
-                Our graduates are sought after for roles in software
-                engineering, AI development, data science, cybersecurity, and
-                research positions in both industry and academia.
+                Graduates are prepared for roles as senior software developers,
+                project managers, system architects, and technical consultants
+                across various industries including finance, healthcare, and
+                technology sectors.
               </p>
               <div class="course-action">
                 <a href="admissions.html#application" class="cta-button"
@@ -528,14 +584,14 @@
           </div>
         </div>
 
-        <!-- Online Business -->
-        <div class="course online active">
+        <!-- Bachelor of Engineering in Computer Science (CSE) -->
+        <div class="course undergraduate engineering computer active">
           <div class="course-detail">
             <div class="course-image">
-              <img src="images/online1.jpg" alt="Online Business" />
+              <img src="images/program6.jpg" alt="CSE Program" />
             </div>
             <div class="course-info">
-              <h3>Online Bachelor of Business Administration</h3>
+              <h3>B.E. in Computer Science Engineering (CSE)</h3>
               <div class="course-meta">
                 <div class="meta-item">
                   <i class="fas fa-graduation-cap"></i>
@@ -543,25 +599,25 @@
                 </div>
                 <div class="meta-item">
                   <i class="fas fa-clock"></i>
-                  <span>4 Years (Flexible)</span>
+                  <span>4 Years</span>
                 </div>
                 <div class="meta-item">
-                  <i class="fas fa-globe"></i>
-                  <span>Online</span>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>On Campus</span>
                 </div>
               </div>
               <p>
-                Our online BBA program offers the same comprehensive business
-                education as our on-campus program but with the flexibility to
-                learn from anywhere. The curriculum covers management
-                principles, marketing, finance, accounting, and
-                entrepreneurship.
+                The Computer Science Engineering program combines computer
+                science principles with engineering concepts to develop
+                comprehensive skills in software development, computer
+                architecture, operating systems, and networking. Students
+                participate in hands-on projects, internships, and industry
+                collaborations.
               </p>
               <p>
-                The program is designed for working professionals, military
-                personnel, and anyone seeking a quality business education with
-                a flexible schedule. Students have access to virtual office
-                hours, online tutoring, and digital resources.
+                CSE graduates are highly sought after for roles in software
+                development, systems engineering, network administration, and IT
+                project management across global tech companies and startups.
               </p>
               <div class="course-action">
                 <a href="admissions.html#application" class="cta-button"
@@ -573,43 +629,177 @@
           </div>
         </div>
 
-        <!-- Certificate Program -->
-        <div class="course certificate active">
+        <!-- B.E. in Artificial Intelligence and Machine Learning (AIML) -->
+        <div class="course undergraduate engineering computer active">
           <div class="course-detail">
             <div class="course-image">
-              <img
-                src="images/certificate1.jpg"
-                alt="Data Science Certificate"
-              />
+              <img src="images/program7.jpg" alt="AIML Program" />
             </div>
             <div class="course-info">
-              <h3>Certificate in Data Science</h3>
+              <h3>B.E. in Artificial Intelligence & Machine Learning</h3>
               <div class="course-meta">
                 <div class="meta-item">
-                  <i class="fas fa-certificate"></i>
-                  <span>Certificate</span>
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Undergraduate</span>
                 </div>
                 <div class="meta-item">
                   <i class="fas fa-clock"></i>
-                  <span>6 Months</span>
+                  <span>4 Years</span>
                 </div>
                 <div class="meta-item">
-                  <i class="fas fa-globe"></i>
-                  <span>Online/Hybrid</span>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>On Campus</span>
                 </div>
               </div>
               <p>
-                This intensive certificate program equips students with
-                practical skills in data analysis, machine learning, data
-                visualization, and statistical modeling. Students work with
-                real-world datasets and industry-standard tools like Python, R,
-                SQL, and Tableau.
+                This specialized engineering program focuses on artificial
+                intelligence, machine learning, deep learning, natural language
+                processing, and computer vision. Students learn to design and
+                implement intelligent systems using cutting-edge technologies
+                and frameworks including TensorFlow and PyTorch.
               </p>
               <p>
-                Designed for professionals looking to pivot into data roles or
-                enhance their analytical capabilities in their current position.
-                No prior programming experience required, though basic
-                statistics knowledge is recommended.
+                Graduates are prepared for careers as AI engineers, machine
+                learning specialists, data scientists, and research engineers in
+                industries ranging from healthcare and finance to robotics and
+                autonomous systems.
+              </p>
+              <div class="course-action">
+                <a href="admissions.html#application" class="cta-button"
+                  >Apply Now</a
+                >
+                <a href="#" class="outline-btn">Download Brochure</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- B.E. in Electronics and Communication Engineering (ECE) -->
+        <div class="course undergraduate engineering active">
+          <div class="course-detail">
+            <div class="course-image">
+              <img src="images/program11.jpg" alt="ECE Program" />
+            </div>
+            <div class="course-info">
+              <h3>B.E. in Electronics & Communication Engineering</h3>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Undergraduate</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-clock"></i>
+                  <span>4 Years</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>On Campus</span>
+                </div>
+              </div>
+              <p>
+                The Electronics and Communication Engineering program covers
+                electronic devices, communication systems, signal processing,
+                microprocessors, and embedded systems. Students gain expertise
+                in designing and implementing electronic circuits, communication
+                networks, and IoT applications through theoretical knowledge and
+                practical laboratory sessions.
+              </p>
+              <p>
+                ECE graduates find opportunities in telecommunications,
+                semiconductor industries, consumer electronics, aerospace,
+                defense, and IoT sectors as electronics engineers, communication
+                specialists, and hardware designers.
+              </p>
+              <div class="course-action">
+                <a href="admissions.html#application" class="cta-button"
+                  >Apply Now</a
+                >
+                <a href="#" class="outline-btn">Download Brochure</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bachelor of Arts in Psychology -->
+        <div class="course undergraduate arts active">
+          <div class="course-detail">
+            <div class="course-image">
+              <img src="images/program9.jpg" alt="Psychology Program" />
+            </div>
+            <div class="course-info">
+              <h3>Bachelor of Arts in Psychology</h3>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Undergraduate</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-clock"></i>
+                  <span>3 Years</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>On Campus</span>
+                </div>
+              </div>
+              <p>
+                The Psychology program provides a comprehensive understanding of
+                human behavior, cognitive processes, development, and
+                psychological research methods. Students explore various
+                subfields including clinical, cognitive, developmental, and
+                social psychology through coursework, research opportunities,
+                and practical experiences.
+              </p>
+              <p>
+                Graduates pursue careers in mental health services, human
+                resources, education, research, and community services, or
+                continue to advanced degrees in psychology, counseling, or
+                related fields.
+              </p>
+              <div class="course-action">
+                <a href="admissions.html#application" class="cta-button"
+                  >Apply Now</a
+                >
+                <a href="#" class="outline-btn">Download Brochure</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bachelor of Commerce (B.Com) -->
+        <div class="course undergraduate business active">
+          <div class="course-detail">
+            <div class="course-image">
+              <img src="images/program10.jpg" alt="B.Com Program" />
+            </div>
+            <div class="course-info">
+              <h3>Bachelor of Commerce (B.Com)</h3>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Undergraduate</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-clock"></i>
+                  <span>3 Years</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>On Campus</span>
+                </div>
+              </div>
+              <p>
+                The Bachelor of Commerce program provides a strong foundation in
+                accounting, finance, taxation, economics, business law, and
+                management. Students develop analytical, problem-solving, and
+                communication skills through case studies, projects, and
+                internships with leading financial institutions and
+                corporations.
+              </p>
+              <p>
+                B.Com graduates pursue careers in accounting, banking, corporate
+                finance, investment analysis, taxation, and business consulting,
+                or advance to professional certifications like CA, CPA, or CFA.
               </p>
               <div class="course-action">
                 <a href="admissions.html#application" class="cta-button"
@@ -652,75 +842,35 @@
           <div class="faculty-member">
             <img src="images/faculty1.jpg" alt="Dr. James Wilson" />
             <div class="faculty-info">
-              <h3>Dr. James Wilson</h3>
-              <p>Professor of Computer Science</p>
-              <p>PhD in Artificial Intelligence, MIT</p>
+              <h3>Dr. Avijit Kumar Chaudhuri</h3>
+              <p>Professor & HOD</p>
+              <p>Qualification: PhD</p>
             </div>
           </div>
           <div class="faculty-member">
             <img src="images/faculty2.jpg" alt="Dr. Sarah Chen" />
             <div class="faculty-info">
-              <h3>Dr. Sarah Chen</h3>
-              <p>Professor of Business Administration</p>
-              <p>PhD in Business Economics, Harvard</p>
+              <h3>Dr. Kalyan Sundar Kola</h3>
+              <p>Associate Professor</p>
+              <p>Qualification: PhD</p>
             </div>
           </div>
           <div class="faculty-member">
             <img src="images/faculty3.jpg" alt="Dr. Michael Johnson" />
             <div class="faculty-info">
-              <h3>Dr. Michael Johnson</h3>
-              <p>Professor of Engineering</p>
-              <p>PhD in Mechanical Engineering, Stanford</p>
+              <h3>Dr. Riya Sil</h3>
+              <p>Professor</p>
+              <p>Qualification: PhD</p>
             </div>
           </div>
           <div class="faculty-member">
             <img src="images/faculty4.jpg" alt="Dr. Emily Rodriguez" />
             <div class="faculty-info">
-              <h3>Dr. Emily Rodriguez</h3>
-              <p>Professor of Medical Sciences</p>
-              <p>MD-PhD, Johns Hopkins University</p>
+              <h3>Dr. Sahabul Alam</h3>
+              <p>Professor</p>
+              <p>Qualification: PhD</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Accreditation Section -->
-    <section id="accreditation">
-      <div class="container">
-        <h2 class="section-title">Accreditation & Recognition</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px">
-          Our programs are accredited by prestigious national and international
-          educational institutions, ensuring the highest standards of academic
-          quality.
-        </p>
-
-        <div class="accreditation-logos">
-          <img
-            src="images/accreditation1.jpg"
-            alt="Accreditation 1"
-            class="accreditation-logo"
-          />
-          <img
-            src="images/accreditation2.jpg"
-            alt="Accreditation 2"
-            class="accreditation-logo"
-          />
-          <img
-            src="images/accreditation3.jpg"
-            alt="Accreditation 3"
-            class="accreditation-logo"
-          />
-          <img
-            src="images/accreditation4.jpg"
-            alt="Accreditation 4"
-            class="accreditation-logo"
-          />
-          <img
-            src="images/accreditation5.jpg"
-            alt="Accreditation 5"
-            class="accreditation-logo"
-          />
         </div>
       </div>
     </section>
