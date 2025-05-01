@@ -663,65 +663,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="contact.js"></script>
     <script>
-      // Contact form submission
-      const contactForm = document.getElementById("contact-form");
-
-      if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Get form data
-          const name = this.querySelector("#name").value;
-          const email = this.querySelector("#email").value;
-          const phone = this.querySelector("#phone").value;
-          const subject = this.querySelector("#subject").value;
-          const message = this.querySelector("#message").value;
-
-          // Here you would normally send the data to a server
-          // For demo purposes, just show a success message
-
-          console.log("Form submitted with:", {
-            name,
-            email,
-            phone,
-            subject,
-            message,
-          });
-
-          // Show success message
-          const successMessage = document.createElement("div");
-          successMessage.style.backgroundColor = "#4CAF50";
-          successMessage.style.color = "white";
-          successMessage.style.padding = "15px";
-          successMessage.style.marginTop = "20px";
-          successMessage.style.borderRadius = "5px";
-          successMessage.style.textAlign = "center";
-          successMessage.innerHTML =
-            "<h3>Message Sent Successfully!</h3><p>Thank you for contacting us. We will get back to you within 1-2 business days.</p>";
-
-          // Remove any existing success message
-          const existingMessage = contactForm.querySelector(".success-message");
-          if (existingMessage) {
-            existingMessage.remove();
-          }
-
-          // Add the class for potential future reference
-          successMessage.classList.add("success-message");
-
-          // Add success message to the form
-          contactForm.appendChild(successMessage);
-
-          // Reset form
-          contactForm.reset();
-
-          // Remove success message after 5 seconds
-          setTimeout(() => {
-            successMessage.remove();
-          }, 5000);
-        });
-      }
-
       // FAQ accordion functionality
       const accordionItems = document.querySelectorAll(".accordion-item");
 
