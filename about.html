@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - University Landing Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Additional styles specific to about page */
+      .about-hero {
+        height: 50vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("images/hero.jpg") no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding-top: 70px;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 50px auto;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: #4a6fdc;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -13px;
+        background-color: white;
+        border: 4px solid #4a6fdc;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .right::after {
+        left: -12px;
+      }
+
+      .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-content h3 {
+        margin-bottom: 10px;
+        color: #4a6fdc;
+      }
+
+      @media screen and (max-width: 768px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-item::after {
+          left: 18px;
+        }
+
+        .left::after,
+        .right::after {
+          left: 18px;
+        }
+
+        .right {
+          left: 0;
+        }
+      }
+
+      .team-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .team-member {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-member img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+      }
+
+      .team-member-info {
+        padding: 20px;
+      }
+
+      .team-member-info h3 {
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .team-member-info p {
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .team-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background-color: #f5f5f5;
+        color: #4a6fdc;
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+
+      .team-social a:hover {
+        background-color: #4a6fdc;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="University Logo" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-buttons">
+          <button class="cta-button" onclick="location.href='admissions.html'">
+            Apply Now
+          </button>
+          <button class="login-button" onclick="location.href='login.html'">
+            <i class="fas fa-user"></i> Login
+          </button>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="hero-content">
+        <h1>About Our University</h1>
+        <p>Learn about our history, mission, and the team behind our success</p>
+      </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section id="about-content">
+      <div class="container">
+        <h2 class="section-title">Our Story</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px">
+          Founded in 1985, our university has grown from a small college to one
+          of the leading educational institutions in the country. Over the
+          decades, we have expanded our programs, built state-of-the-art
+          facilities, and developed a reputation for academic excellence and
+          innovation.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>1985</h3>
+              <p>
+                The university was founded with just three departments and 200
+                students in a single building donated by local philanthropists.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>1995</h3>
+              <p>
+                Expanded to include 10 departments and built the first dedicated
+                science building with advanced research facilities.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>2005</h3>
+              <p>
+                Received national accreditation for all programs and opened the
+                international student exchange program with 15 partner
+                universities.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>2015</h3>
+              <p>
+                Celebrated 30 years of excellence with the opening of the new
+                library and digital learning center, recognized as one of the
+                most advanced in the region.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>Today</h3>
+              <p>
+                With over 15,000 students from 75 countries, we continue to
+                expand our horizons while maintaining our commitment to quality
+                education and research.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section id="mission-vision" style="background-color: #f9f9f9">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-item">
+            <div class="icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To be a globally recognized institution that transforms lives
+              through education, research, and innovation. We aspire to be at
+              the forefront of addressing global challenges and contributing to
+              sustainable development.
+            </p>
+          </div>
+          <div class="about-item">
+            <div class="icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To empower our students with knowledge, skills, and values to
+              excel in a rapidly changing world and contribute meaningfully to
+              society. We foster critical thinking, creativity, and ethical
+              leadership through a diverse and inclusive learning environment.
+            </p>
+          </div>
+          <div class="about-item">
+            <div class="icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3>Our Values</h3>
+            <p>
+              Excellence, integrity, diversity, innovation, and social
+              responsibility form the core of our institutional ethos. We
+              believe in the power of education to transform individuals and
+              societies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <h2 class="section-title">Our Leadership Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="images/team1.jpg" alt="University President" />
+            <div class="team-member-info">
+              <h3>Dr. Jennifer Taylor</h3>
+              <p>University President</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="images/team2.jpg" alt="Academic Provost" />
+            <div class="team-member-info">
+              <h3>Dr. Robert Chen</h3>
+              <p>Academic Provost</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="images/team3.jpg" alt="Dean of Students" />
+            <div class="team-member-info">
+              <h3>Dr. Maria Rodriguez</h3>
+              <p>Dean of Students</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="images/team4.jpg" alt="Director of Research" />
+            <div class="team-member-info">
+              <h3>Dr. James Wilson</h3>
+              <p>Director of Research</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campus Location and Facilities -->
+    <section id="campus-facilities">
+      <div class="container">
+        <h2 class="section-title">Our Campus</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px">
+          Our modern campus spans over 200 acres of beautifully landscaped
+          grounds, featuring state-of-the-art academic buildings, research
+          facilities, and student amenities.
+        </p>
+
+        <div class="campus-grid">
+          <div class="campus-item">
+            <img src="images/facility1.jpg" alt="Academic Buildings" />
+            <h3>Academic Buildings</h3>
+            <p>
+              Modern classrooms equipped with the latest technology for an
+              optimal learning experience.
+            </p>
+          </div>
+          <div class="campus-item">
+            <img src="images/facility2.jpg" alt="Research Centers" />
+            <h3>Research Centers</h3>
+            <p>
+              Cutting-edge laboratories and research facilities supporting
+              innovation and discovery.
+            </p>
+          </div>
+          <div class="campus-item">
+            <img src="images/facility3.jpg" alt="Library" />
+            <h3>Library & Learning Commons</h3>
+            <p>
+              A comprehensive collection of resources, digital archives, and
+              collaborative study spaces.
+            </p>
+          </div>
+          <div class="campus-item">
+            <img src="images/facility4.jpg" alt="Student Center" />
+            <h3>Student Center</h3>
+            <p>
+              A vibrant hub for student activities, dining, and community
+              engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="admissions.html">Admissions</a></li>
+              <li><a href="courses.html">Academic Programs</a></li>
+              <li><a href="index.html#campus-life">Campus Life</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Library</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Career Services</a></li>
+              <li><a href="login.html">Student & Faculty Portal</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Policies</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Safety & Security</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 University Name. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
