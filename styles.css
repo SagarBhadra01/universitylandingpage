@@ -166,13 +166,14 @@ nav ul li a:hover::after, nav ul li a.active::after {
 /* Hero Section */
 #hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
     padding-top: 70px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(/images/image.png);
 }
 
 .hero-content {
