@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - University Landing Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Additional styles specific to login page */
+      .login-hero {
+        height: 50vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("images/login-hero.jpg") no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding-top: 70px;
+      }
+
+      .login-container {
+        display: flex;
+        justify-content: center;
+        margin: 60px 0;
+      }
+
+      .login-tabs {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .tab-buttons {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .tab-button {
+        padding: 15px 25px;
+        background-color: #f5f5f5;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+        flex: 1;
+        text-align: center;
+      }
+
+      .tab-button:hover {
+        background-color: #e5e5e5;
+      }
+
+      .tab-button.active {
+        background-color: #4a6fdc;
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+        padding: 40px;
+        background-color: white;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .login-form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .login-form h3 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1.8rem;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #444;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus {
+        border-color: #4a6fdc;
+        outline: none;
+      }
+
+      .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+      }
+
+      .remember-me input {
+        margin-right: 8px;
+      }
+
+      .forgot-password a {
+        color: #4a6fdc;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #4a6fdc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #3557b7;
+      }
+
+      .login-info {
+        text-align: center;
+        margin-top: 30px;
+        color: #666;
+      }
+
+      .login-info .icon {
+        font-size: 3rem;
+        color: #4a6fdc;
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 768px) {
+        .tab-buttons {
+          flex-direction: column;
+        }
+
+        .tab-content {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="University Logo" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="cta-button" onclick="location.href='admissions.html'">
+          Apply Now
+        </button>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Login Hero Section -->
+    <section class="login-hero">
+      <div class="hero-content">
+        <h1>University Portal Login</h1>
+        <p>Access your student or faculty account</p>
+      </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login">
+      <div class="container">
+        <div class="login-container">
+          <div class="login-tabs">
+            <div class="tab-buttons">
+              <button class="tab-button active" data-tab="student">
+                Student Login
+              </button>
+              <button class="tab-button" data-tab="faculty">
+                Faculty Login
+              </button>
+            </div>
+
+            <!-- Student Login -->
+            <div class="tab-content active" id="student">
+              <div class="login-form">
+                <h3>Student Portal</h3>
+                <form id="student-login-form">
+                  <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input
+                      type="text"
+                      id="student-id"
+                      name="student-id"
+                      required
+                      placeholder="Enter your student ID"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="student-password">Password</label>
+                    <input
+                      type="password"
+                      id="student-password"
+                      name="student-password"
+                      required
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                  <div class="remember-forgot">
+                    <div class="remember-me">
+                      <input
+                        type="checkbox"
+                        id="student-remember"
+                        name="student-remember"
+                      />
+                      <label for="student-remember">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                      <a href="#">Forgot password?</a>
+                    </div>
+                  </div>
+                  <button type="submit" class="submit-btn">Login</button>
+                </form>
+                <div class="login-info">
+                  <div class="icon">
+                    <i class="fas fa-user-graduate"></i>
+                  </div>
+                  <p>
+                    Access your courses, grades, assignments, campus resources,
+                    and more.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Faculty Login -->
+            <div class="tab-content" id="faculty">
+              <div class="login-form">
+                <h3>Faculty Portal</h3>
+                <form id="faculty-login-form">
+                  <div class="form-group">
+                    <label for="faculty-id">Faculty ID</label>
+                    <input
+                      type="text"
+                      id="faculty-id"
+                      name="faculty-id"
+                      required
+                      placeholder="Enter your faculty ID"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="faculty-password">Password</label>
+                    <input
+                      type="password"
+                      id="faculty-password"
+                      name="faculty-password"
+                      required
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                  <div class="remember-forgot">
+                    <div class="remember-me">
+                      <input
+                        type="checkbox"
+                        id="faculty-remember"
+                        name="faculty-remember"
+                      />
+                      <label for="faculty-remember">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                      <a href="#">Forgot password?</a>
+                    </div>
+                  </div>
+                  <button type="submit" class="submit-btn">Login</button>
+                </form>
+                <div class="login-info">
+                  <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <p>
+                    Access course management, student records, research
+                    resources, and faculty tools.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Info Section -->
+    <section id="login-support" style="background-color: #f9f9f9">
+      <div class="container">
+        <h2 class="section-title">Need Help?</h2>
+        <div class="about-content">
+          <div class="about-item">
+            <div class="icon">
+              <i class="fas fa-question-circle"></i>
+            </div>
+            <h3>Technical Support</h3>
+            <p>
+              Experiencing login issues? Contact our IT help desk at
+              <a href="mailto:itsupport@university.edu"
+                >itsupport@university.edu</a
+              >
+              or call (123) 456-7890.
+            </p>
+          </div>
+          <div class="about-item">
+            <div class="icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>User Guides</h3>
+            <p>
+              Access detailed guides on how to use the student and faculty
+              portals through our <a href="#">Online Knowledge Base</a>.
+            </p>
+          </div>
+          <div class="about-item">
+            <div class="icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <h3>New User Registration</h3>
+            <p>
+              First-time users should have received login credentials via email.
+              If not, please contact your department administrator.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="admissions.html">Admissions</a></li>
+              <li><a href="courses.html">Academic Programs</a></li>
+              <li><a href="index.html#campus-life">Campus Life</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Library</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Career Services</a></li>
+              <li><a href="login.html">Student Portal</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Policies</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Safety & Security</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 University Name. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Tab switching functionality
+      const tabButtons = document.querySelectorAll(".tab-button");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class from all buttons and content
+          tabButtons.forEach((btn) => btn.classList.remove("active"));
+          tabContents.forEach((content) => content.classList.remove("active"));
+
+          // Add active class to clicked button
+          button.classList.add("active");
+
+          // Show corresponding content
+          const tabId = button.getAttribute("data-tab");
+          document.getElementById(tabId).classList.add("active");
+        });
+      });
+
+      // Form submission logic
+      const studentLoginForm = document.getElementById("student-login-form");
+      const facultyLoginForm = document.getElementById("faculty-login-form");
+
+      // Student login form handling
+      if (studentLoginForm) {
+        studentLoginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Here you would typically send a request to your authentication server
+          // For demo purposes, just show a message
+          alert(
+            "Student login successful! Redirecting to student dashboard..."
+          );
+          // In a real implementation, you would redirect to the student dashboard
+          // window.location.href = "student-dashboard.html";
+        });
+      }
+
+      // Faculty login form handling
+      if (facultyLoginForm) {
+        facultyLoginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Here you would typically send a request to your authentication server
+          // For demo purposes, just show a message
+          alert(
+            "Faculty login successful! Redirecting to faculty dashboard..."
+          );
+          // In a real implementation, you would redirect to the faculty dashboard
+          // window.location.href = "faculty-dashboard.html";
+        });
+      }
+    </script>
+  </body>
+</html>
